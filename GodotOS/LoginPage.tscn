@@ -1,0 +1,265 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://res/fonts/8-bit-limit/8blimro.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://res/fonts/charybdis/Charybdis.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://res/fonts/november/November.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://GodotOS/LoginPage.gd" type="Script" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0823529, 0.298039, 0.458824, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 55
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxLine" id=4]
+color = Color( 1, 1, 1, 1 )
+grow_begin = 10.0
+grow_end = 10.0
+thickness = 5
+
+[sub_resource type="DynamicFont" id=3]
+size = 45
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 35
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 25
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 25
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 60
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 50
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 32
+font_data = ExtResource( 2 )
+
+[node name="LoginPage" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 344.0
+margin_top = 141.0
+margin_right = 679.0
+margin_bottom = 458.0
+custom_constants/separation = 50
+
+[node name="Title" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
+margin_right = 335.0
+margin_bottom = 129.0
+rect_min_size = Vector2( 0, 100 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/Title"]
+margin_left = 48.0
+margin_right = 286.0
+margin_bottom = 129.0
+custom_constants/separation = 10
+
+[node name="OS Name" type="Label" parent="CenterContainer/VBoxContainer/Title/VBoxContainer"]
+margin_right = 238.0
+margin_bottom = 59.0
+custom_fonts/font = SubResource( 2 )
+text = "Godot OS"
+align = 1
+valign = 1
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/VBoxContainer/Title/VBoxContainer"]
+margin_top = 69.0
+margin_right = 238.0
+margin_bottom = 74.0
+rect_min_size = Vector2( 5, 5 )
+custom_styles/separator = SubResource( 4 )
+
+[node name="Title" type="Label" parent="CenterContainer/VBoxContainer/Title/VBoxContainer"]
+margin_top = 84.0
+margin_right = 238.0
+margin_bottom = 129.0
+custom_fonts/font = SubResource( 3 )
+text = "Connection"
+align = 1
+valign = 1
+
+[node name="Form" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
+margin_top = 179.0
+margin_right = 335.0
+margin_bottom = 317.0
+
+[node name="V_form" type="VBoxContainer" parent="CenterContainer/VBoxContainer/Form"]
+margin_right = 335.0
+margin_bottom = 138.0
+custom_constants/separation = 15
+
+[node name="C_Pseudo" type="CenterContainer" parent="CenterContainer/VBoxContainer/Form/V_form"]
+margin_right = 335.0
+margin_bottom = 36.0
+
+[node name="H_Pseudo" type="HBoxContainer" parent="CenterContainer/VBoxContainer/Form/V_form/C_Pseudo"]
+margin_left = 22.0
+margin_right = 312.0
+margin_bottom = 36.0
+
+[node name="Pseudo" type="Label" parent="CenterContainer/VBoxContainer/Form/V_form/C_Pseudo/H_Pseudo"]
+margin_right = 120.0
+margin_bottom = 35.0
+custom_fonts/font = SubResource( 5 )
+text = "Pseudo :"
+
+[node name="LineEdit" type="LineEdit" parent="CenterContainer/VBoxContainer/Form/V_form/C_Pseudo/H_Pseudo"]
+margin_left = 124.0
+margin_right = 290.0
+margin_bottom = 36.0
+custom_fonts/font = SubResource( 6 )
+text = "root"
+align = 1
+max_length = 32
+
+[node name="C_Password" type="CenterContainer" parent="CenterContainer/VBoxContainer/Form/V_form"]
+margin_top = 51.0
+margin_right = 335.0
+margin_bottom = 87.0
+
+[node name="_Password" type="HBoxContainer" parent="CenterContainer/VBoxContainer/Form/V_form/C_Password"]
+margin_right = 335.0
+margin_bottom = 36.0
+
+[node name="Pseudo" type="Label" parent="CenterContainer/VBoxContainer/Form/V_form/C_Password/_Password"]
+margin_right = 165.0
+margin_bottom = 35.0
+custom_fonts/font = SubResource( 5 )
+text = "Password : "
+
+[node name="LineEdit" type="LineEdit" parent="CenterContainer/VBoxContainer/Form/V_form/C_Password/_Password"]
+margin_left = 169.0
+margin_right = 335.0
+margin_bottom = 36.0
+custom_fonts/font = SubResource( 7 )
+text = "root"
+align = 1
+max_length = 32
+secret = true
+
+[node name="C_Button" type="CenterContainer" parent="CenterContainer/VBoxContainer/Form/V_form"]
+margin_top = 102.0
+margin_right = 335.0
+margin_bottom = 138.0
+
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer/Form/V_form/C_Button"]
+margin_left = 116.0
+margin_right = 219.0
+margin_bottom = 36.0
+custom_fonts/font = SubResource( 8 )
+text = "Connect"
+
+[node name="Popup" type="CenterContainer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="Popup"]
+margin_left = 262.0
+margin_top = 175.0
+margin_right = 762.0
+margin_bottom = 425.0
+rect_min_size = Vector2( 500, 250 )
+
+[node name="Panel" type="Panel" parent="Popup/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Popup/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="C_Title" type="CenterContainer" parent="Popup/Control/VBoxContainer"]
+margin_right = 500.0
+margin_bottom = 60.0
+
+[node name="Title" type="Label" parent="Popup/Control/VBoxContainer/C_Title"]
+margin_left = 159.0
+margin_right = 341.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 10 )
+text = "Error !"
+align = 1
+valign = 1
+
+[node name="C_error" type="CenterContainer" parent="Popup/Control/VBoxContainer"]
+margin_top = 75.0
+margin_right = 500.0
+margin_bottom = 125.0
+
+[node name="error" type="Label" parent="Popup/Control/VBoxContainer/C_error"]
+margin_left = 49.0
+margin_right = 449.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 400, 0 )
+custom_fonts/font = SubResource( 9 )
+text = "Error"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="C_button" type="CenterContainer" parent="Popup/Control/VBoxContainer"]
+margin_top = 140.0
+margin_right = 500.0
+margin_bottom = 185.0
+
+[node name="Ok" type="Button" parent="Popup/Control/VBoxContainer/C_button"]
+margin_left = 217.0
+margin_right = 282.0
+margin_bottom = 45.0
+rect_min_size = Vector2( 65, 45 )
+custom_fonts/font = SubResource( 11 )
+text = "ok"
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Form/V_form/C_Button/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Popup/Control/VBoxContainer/C_button/Ok" to="." method="_on_Ok_pressed"]

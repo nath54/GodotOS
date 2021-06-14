@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://GodotOS/elements/window_bar/window_bar.tscn" type="PackedScene" id=1]
+[ext_resource path="res://res/fonts/charybdis/Charybdis.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+size = 100
+font_data = ExtResource( 2 )
+
+[node name="HelloWorld" type="Control"]
+margin_right = 495.0
+margin_bottom = 338.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="VSplitContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+dragger_visibility = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Window" parent="Container" instance=ExtResource( 1 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 495.0
+margin_bottom = 33.0
+title = "Hello World !"
+
+[node name="Canvas" type="Control" parent="Container"]
+margin_top = 33.0
+margin_right = 495.0
+margin_bottom = 338.0
+
+[node name="Panel" type="Panel" parent="Container/Canvas"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Container/Canvas"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Hello World !"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

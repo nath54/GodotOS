@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://GodotOS/GodotOS.gd" type="Script" id=1]
+[ext_resource path="res://res/user/background.png" type="Texture" id=2]
+[ext_resource path="res://GodotOS/elements/Menu/Menu.tscn" type="PackedScene" id=3]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.266667, 0.266667, 0.266667, 1 )
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 1920, 1080 )
+
+[node name="GodotOS" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VSplitContainer" type="VSplitContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+dragger_visibility = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="VSplitContainer"]
+margin_right = 1024.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 40, 40 )
+
+[node name="Panel" type="Panel" parent="VSplitContainer/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="HSplitContainer" parent="VSplitContainer/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+dragger_visibility = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VSplitContainer/Control/Menu"]
+margin_right = 1024.0
+margin_bottom = 40.0
+
+[node name="Menu" parent="VSplitContainer/Control/Menu/HBoxContainer" instance=ExtResource( 3 )]
+margin_right = 48.0
+margin_bottom = 40.0
+
+[node name="MainScene" type="Control" parent="VSplitContainer"]
+margin_top = 40.0
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[node name="bg" type="Panel" parent="VSplitContainer/MainScene"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

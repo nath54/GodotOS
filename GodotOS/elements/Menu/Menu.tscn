@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://GodotOS/elements/Menu/Menu.gd" type="Script" id=1]
+
+[node name="Menu" type="MenuButton"]
+margin_right = 71.0
+margin_bottom = 63.0
+pressed = true
+keep_pressed_outside = true
+text = "Menu"
+align = 0
+expand_icon = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

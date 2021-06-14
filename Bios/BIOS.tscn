@@ -1,0 +1,192 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://res/fonts/november/November.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://res/fonts/joystix/joystix monospace.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Bios/elements/BT_MENU_OS.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Bios/BIOS.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 8
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=3]
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("GodotIcon/icon:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 1.9, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0, 1.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Name:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 2, 2.9, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true, false ]
+}
+
+[sub_resource type="DynamicFont" id=4]
+size = 35
+font_data = ExtResource( 1 )
+
+[node name="BIOS" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Animation1" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="GodotIcon" type="CenterContainer" parent="Animation1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="icon" type="Label" parent="Animation1/GodotIcon"]
+margin_left = 337.0
+margin_top = 139.0
+margin_right = 687.0
+margin_bottom = 461.0
+custom_fonts/font = SubResource( 1 )
+text = "                                                  
+               hhyssy        ysyyh                
+             hoooooooy      soooooos              
+             hooooooooyyyyysoooooooo              
+             hooooooooooooooooooooos              
+    hyh    hsooooooooooooooooooooooosyh   hyyh    
+  hsoooosysoooooooooooooooooooooooooooosysooooy   
+ yooooooooooooooooooooooooooooooooooooooooooooosh 
+ yooooooooooooooooooooooooooooooooooooooooooooooy 
+  hooooooooooooooooooooooooooooooooooooooooooosh  
+   hooooooo/:--:+oooooooooooooooo+:--:+ooooooo    
+   hooooo+` :++/.-oooooo++ooooo+.-+++- .oooooo    
+   hooooo` ohhhhh.:oooo-  /oooo./hhhhh: -ooooo    
+   hooooo- +hhhhh./oooo-  :oooo::hhhhh: /ooooo    
+   hoooooo:`.//:-/ooooo-  /ooooo/-:/:../oooooo    
+   hooooooooo++ooooooooo//ooooooooo++ooooooooo    
+   y:///+++oooooooooooooooooooooooooooo+++////    
+   y::---.. :ooooooo---------:ooooooo. ..---:/    
+   hoooooo+ -oooooo/ :++++++. ooooooo``oooooos    
+    soooooo.`````..` +oooooo/ ...`````-ooooooy    
+     soooooooooooo+++oooooooo+++ooooooooooooy     
+      hsooooooooooooooooooooooooooooooooosyh      
+         hyssoooooooooooooooooooooooossyh         
+              hhyyyyssssssssssyyyyhh              
+                                                  "
+percent_visible = 0.0
+
+[node name="Name" type="CenterContainer" parent="Animation1"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GodotOS" type="Label" parent="Animation1/Name"]
+margin_left = 412.0
+margin_top = 274.0
+margin_right = 612.0
+margin_bottom = 325.0
+custom_fonts/font = SubResource( 2 )
+text = "Godot OS"
+align = 1
+valign = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Animation1"]
+anims/godot_icon = SubResource( 3 )
+
+[node name="BiosMenu" type="CenterContainer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CenterContainer" type="VBoxContainer" parent="BiosMenu"]
+margin_left = 362.0
+margin_top = 160.0
+margin_right = 662.0
+margin_bottom = 440.0
+custom_constants/separation = 30
+
+[node name="CenterContainer" type="CenterContainer" parent="BiosMenu/CenterContainer"]
+margin_right = 300.0
+margin_bottom = 36.0
+
+[node name="Label" type="Label" parent="BiosMenu/CenterContainer/CenterContainer"]
+margin_left = 10.0
+margin_right = 290.0
+margin_bottom = 36.0
+custom_fonts/font = SubResource( 4 )
+text = "Choose your OS :"
+align = 1
+valign = 1
+
+[node name="HSeparator" type="HSeparator" parent="BiosMenu/CenterContainer"]
+margin_top = 66.0
+margin_right = 300.0
+margin_bottom = 70.0
+
+[node name="CenterContainer2" type="CenterContainer" parent="BiosMenu/CenterContainer"]
+margin_top = 100.0
+margin_right = 300.0
+margin_bottom = 280.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BiosMenu/CenterContainer/CenterContainer2"]
+margin_right = 300.0
+margin_bottom = 180.0
+custom_constants/separation = 15
+
+[node name="G-OS" parent="BiosMenu/CenterContainer/CenterContainer2/VBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 300.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 300, 50 )
+text = "Godot OS"
+
+[node name="Settings" parent="BiosMenu/CenterContainer/CenterContainer2/VBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 65.0
+margin_right = 300.0
+margin_bottom = 115.0
+rect_min_size = Vector2( 300, 50 )
+text = "BIOS Settings"
+
+[node name="Quit" parent="BiosMenu/CenterContainer/CenterContainer2/VBoxContainer" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 130.0
+margin_right = 300.0
+margin_bottom = 180.0
+rect_min_size = Vector2( 300, 50 )
+text = "Quit"
+[connection signal="animation_finished" from="Animation1/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

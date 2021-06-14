@@ -128,39 +128,42 @@ anims/godot_icon = SubResource( 3 )
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="CenterContainer" type="VBoxContainer" parent="BiosMenu"]
-margin_left = 362.0
+margin_left = 356.0
 margin_top = 160.0
-margin_right = 662.0
+margin_right = 668.0
 margin_bottom = 440.0
 custom_constants/separation = 30
 
 [node name="CenterContainer" type="CenterContainer" parent="BiosMenu/CenterContainer"]
-margin_right = 300.0
+margin_right = 312.0
 margin_bottom = 36.0
 
 [node name="Label" type="Label" parent="BiosMenu/CenterContainer/CenterContainer"]
-margin_left = 10.0
-margin_right = 290.0
+margin_right = 312.0
 margin_bottom = 36.0
 custom_fonts/font = SubResource( 4 )
-text = "Choose your OS :"
+text = "select an option :"
 align = 1
 valign = 1
 
 [node name="HSeparator" type="HSeparator" parent="BiosMenu/CenterContainer"]
 margin_top = 66.0
-margin_right = 300.0
+margin_right = 312.0
 margin_bottom = 70.0
 
 [node name="CenterContainer2" type="CenterContainer" parent="BiosMenu/CenterContainer"]
 margin_top = 100.0
-margin_right = 300.0
+margin_right = 312.0
 margin_bottom = 280.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="BiosMenu/CenterContainer/CenterContainer2"]
-margin_right = 300.0
+margin_left = 6.0
+margin_right = 306.0
 margin_bottom = 180.0
 custom_constants/separation = 15
 

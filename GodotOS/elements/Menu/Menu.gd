@@ -1,11 +1,6 @@
 extends MenuButton
 
 var options = {
-	"system": {
-		"Quit": 0,
-		"Reboot": 1,
-		"Log Out": 2
-	},
 	"apps":{
 		"Games":{
 		},
@@ -13,8 +8,13 @@ var options = {
 		},
 		"Other":{
 			"Hello-World": 5,
-			"Virus(Hello-World)": 42
+			"25x(Hello-World)": 42
 		}
+	},
+	"system": {
+		"Log Out": 2,
+		"Reboot": 1,
+		"Quit": 0
 	}
 }
 
